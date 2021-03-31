@@ -1,2 +1,3 @@
 npx knex migrate:make init (makes a migration file with name init)
 npm knex init (to create knex file)
+npx npkill(to delete node modules folder)
