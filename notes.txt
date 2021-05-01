@@ -1,3 +1,30 @@
 npx knex migrate:make init (makes a migration file with name init)
 npm knex init (to create knex file)
 npx npkill(to delete node modules folder)
+
+
+-----------------mocha chai test----------------------
+
+const expect = require('chai').expect;
+const db = require('../util/database');
+
+describe('test 1', function(){
+    it("should add to 5", function(){
+        const num1 = 3;
+        const num2 = 2;
+        expect(num1 + num2).to.equal(5);
+    })
+})
+
+describe('get request',  ()=>{
+
+    it('should get all the products', async ()=>{
+        let result =  "fail";
+        let data = await db.execute("SELECT * FROM products");
+        if(data){
+         console.log("Test passed ");
+         result = 'pass';
+        }
+        expect(result).to.equal('pass');     
+ });
+});
